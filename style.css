@@ -1,0 +1,276 @@
+/*
+  Terence Nguyen
+  01/18/2023
+  Style CSS
+  Website styling for my summative webpage
+*/
+/* -------------------------------------- UNIVERSALLY USED STYLING -------------------------------------- */
+body {
+  margin-top:0;
+  margin-bottom:0;
+  margin-right:0;
+  margin-left:250px;
+  max-width: 100%;    /* disables the */
+  overflow-x: hidden; /* horizontal scrollbar */
+  background-color:#ecf0f1;
+}
+/* The sidebar menu */
+#sideul {
+  margin:0;
+  height: 100%;
+  width: 210px;
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px;
+  list-style-type:none;
+}
+#sideli {
+  margin:0;
+  float:left;
+}
+#sideli a:hover{
+  color:#666666;
+}
+#sideul a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+/* Scrollbar design --- Taken from W3Schools
+        Scrollbar notes
+::-webkit-scrollbar the scrollbar.
+::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+::-webkit-scrollbar-thumb the draggable scrolling handle.
+::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements.
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background:#ccc;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#7FD8EA;
+  border-radius:10px;
+  border-style:solid;
+  border-color:#1F788A
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:#111;
+}
+h1 {
+  font-size:3em;
+}
+h2 {
+  font-size:2.5em;
+  text-align:center;
+}
+h3 {
+  font-size:1.5em;
+  text-align:center;
+}
+video { /* centers videos */
+  display: block;
+  margin: 0 auto;
+}
+ol {
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+  border-style:solid;
+  border-color:#666;
+  padding:25px;
+  box-shadow: 10px 10px 50px #222, -10px -10px 50px #222;
+}
+/* -------------------------------------- HOME PAGE -------------------------------------- */
+.header {
+  text-align:center;
+  padding:25px;
+  border-bottom-style:solid;
+  border-bottom-width:5px;
+  border-bottom-color:#666;
+  box-shadow: 0px 10px  50px 20px #222;
+  background-image:url("IMAGES/header.webp");
+  text-shadow: 5px 5px 10px #111; /* from W3Schools */
+  color:white;
+}
+.mainDiv {
+  width:100%;
+  height:60%;
+  overflow:hidden;
+  border-bottom-style:solid;
+  border-bottom-width:5px;
+  border-bottom-color:#666;
+  box-shadow: 0px 10px  50px 20px #222; /* from W3Schools */
+}
+.mainBG {
+  background-color:black;
+  width:100%;
+  height:60%;
+  opacity:0.2;
+  position:absolute;
+  z-index:1;
+}
+.mainIMG {
+  position:relative;
+  top:-33%;
+  width:100%;
+}
+.mainH1 {
+  z-index:1;
+  position:absolute;
+  color:white;
+  top:18%;
+  font-size:6em;
+  left:36%;
+  text-shadow: 5px 5px 15px #111; /* from W3Schools */
+}
+#firstGroup {
+  width:80%;
+  position:relative;
+  left:10%;
+}
+#firstGroup p {
+  font-size:20px;
+}
+#thirdGroup {
+  width:80%;
+  position:relative;
+  left:10%;
+}
+#thirdGroup p, li {
+  font-size:20px;
+}
+.avatar {
+  width:20%;
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  box-shadow: 10px 10px 50px #222 inset, -10px -10px 50px #222 inset;
+  background-color:#7FD8EA;
+}
+#avatar1 {
+  position:relative;
+  top:10px;
+  width:20%;
+  left:10%;
+  height:40%;
+  background-color:#7FD8EA;
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  box-shadow: 10px 10px 50px #222 inset, -10px -10px 50px #222 inset;
+}
+.innerAvatar {
+  padding:25px;
+}
+#avatar2 {
+  position:relative;
+  top:-388px;
+  left:40%;
+  width:20%;
+  height:40%;
+  background-color:#7FD8EA;
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  box-shadow: 10px 10px 50px #222 inset, -10px -10px 50px #222 inset;
+  margin-bottom:-388px;
+}
+#avatar3 {
+  position:relative;
+  top:-397px;
+  left:70%;
+  width:20%;
+  height:40%;
+  background-color:#7FD8EA;
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  box-shadow: 10px 10px 50px #222 inset, -10px -10px 50px #222 inset;
+  margin-bottom:-397px;
+}
+.aTitle {
+  border-bottom-style:solid;
+  border-bottom-width:5px;
+  border-color:#666;
+}
+/* -------------------------------------- CIRCUIT SCHEMATIC / PRICE LIST -------------------------------------- */
+#imgCS { /* img circuitSchematic */
+  position:relative;
+  width:80%;
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  box-shadow: 10px 10px 50px #222, -10px -10px 50px #222;
+}
+table {
+  text-align:center;
+  border-style:solid;
+  border-width:3px;
+  padding:5px;
+}
+#table {
+  width:38%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 40px #222 inset, -10px -10px 40px #222 inset;
+}
+tr, td, th {
+  border-style:solid;
+  border-width:3px;
+  padding:5px;
+  font-size:20px;
+}
+#firstGroup1 {
+  text-align:center;
+}
+#firstGroup1 p {
+  font-size:20px;
+  width:80%;
+  display:block;
+  margin: 0 auto;
+}
+#secondGroup1 {
+  text-align:center;
+  margin-bottom:50px;
+}
+/* -------------------------------------- TINKERCAD VISUAL -------------------------------------- */
+#TKvisual {
+  border-style:solid;
+  border-width:5px;
+  border-color:#666;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 50px #222, -10px -10px 50px #222;
+}
+#secondGroup2 {
+  width:80%;
+  display:block;
+  margin: 0 auto;
+}
+#secondGroup2 p {
+  font-size:20px;
+}
+/* -------------------------------------- C0DE -------------------------------------- */
+#firstGroupC {
+  width:80%;
+  display:block;
+  margin: 0 auto;
+}
+#firstGroupC p {
+  font-size:20px;
+}

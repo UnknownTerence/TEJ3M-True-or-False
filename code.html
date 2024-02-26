@@ -1,0 +1,70 @@
+<!--
+  Terence Nguyen
+  01/22/2023
+  Arduino Code
+  This contains the code used inside of the arduino
+-->
+<html>
+  <head>
+    <title>Summative | Arduino Code</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Side Navigation Bar -->
+    <ul id="sideul">
+      <li id="sideli"><a href="index.html">Home</a></li>
+      <li id="sideli"><a href="circuitSchematic/index.html">Circuit Schematic</a></li>
+      <li id="sideli"><a href="tinkercadVisual/index.html">Tinkercad Visual</a></li>
+      <li id="sideli"><a href="demos/virtual.html">Virtual Demo</a></li>
+      <li id="sideli"><a href="demos/live.html">Live Demo</a></li>
+      <li id="sideli"><a href="code.html">Code</a></li>
+    </ul>
+    <div class="header">
+      <h1>Arduino Code</h1>
+    </div>
+    <iframe src="code.txt" width="100%" height="100%" style="border:none;">hello?</iframe>
+    <div id="firstGroupC">
+      <h2>Code Snippits</h2>
+      <p>
+        else if(counter==2) // second question<br>
+        {<br>
+          &emsp;delay(1000); // delays before next question<br>
+          &emsp;lcd.clear();<br>
+          &emsp;lcd.setCursor(1,0);<br>
+          &emsp;lcd.print("WWW stands for");<br>
+          &emsp;lcd.setCursor(1,1);<br>
+          &emsp;lcd.print("World Wide Web");<br>
+          &emsp;while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed<br>
+          &emsp;{<br>
+            &emsp;&emsp;value1 = digitalRead(button1);<br>
+        	  &emsp;&emsp;value2 = digitalRead(button2);<br>
+            &emsp;&emsp;delay(1);<br>
+            &emsp;&emsp;if(value1==1) // if player chooses true<br>
+            &emsp;&emsp;{<br>
+              &emsp;&emsp;&emsp;counter++; // brings to the next question<br>
+              &emsp;&emsp;&emsp;lcd.clear();<br>
+              &emsp;&emsp;&emsp;lcd.setCursor(3,0); // sets position on display<br>
+              &emsp;&emsp;&emsp;lcd.print("You got it");<br>
+              &emsp;&emsp;&emsp;lcd.setCursor(4,1); // sets position on display<br>
+              &emsp;&emsp;&emsp;lcd.print("Correct!");<br>
+              &emsp;&emsp;&emsp;correct++;<br>
+            &emsp;&emsp;}<br>
+            &emsp;&emsp;else if(value2==1) // if player chooses false<br>
+            &emsp;&emsp;{<br>
+              &emsp;&emsp;&emsp;counter++; // brings to the next question<br>
+              &emsp;&emsp;&emsp;lcd.clear();<br>
+              &emsp;&emsp;&emsp;lcd.setCursor(3,0); // sets position on display<br>
+              &emsp;&emsp;&emsp;lcd.print("You got it");<br>
+              &emsp;&emsp;&emsp;lcd.setCursor(5,1); // sets position on display<br>
+              &emsp;&emsp;&emsp;lcd.print("Wrong!");<br>
+              &emsp;&emsp;&emsp;wrong++;<br>
+            &emsp;&emsp;}<br>
+          &emsp;}<br>
+        }<br>
+      </p>
+      <p>
+        This snippet of code is used 5 times for each of the statements for the true or false. This specific snippet is from line 101. This code is what is used to determine whether or not the player as entered an input, the input being button1 (true) or button2 (false).
+      </p>
+    </div>
+  </body>
+</html>

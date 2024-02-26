@@ -1,0 +1,293 @@
+// Terence Nguyen
+// 1/20/2023
+// True or False Game
+// Making a true or false game with an arduino, LCD and buttons
+
+
+#include <LiquidCrystal_I2C.h> // adds library for the LCD I2C
+
+LiquidCrystal_I2C lcd(32,16,2);  // set the LCD address to 32 
+						// for a 16 chars and 2 line display
+						// change address to (0x27,16,2) for hardware
+
+// Variables
+int button1=2;
+int button2=3;
+int button3=4;
+
+int value1=0;
+int value2=0;
+int value3=0;
+
+int counter=0;
+int correct=0;
+int wrong=0;
+
+void setup()
+{
+  // Buttons
+  pinMode(button1, INPUT);
+  pinMode(button2, INPUT);
+  pinMode(button3, INPUT);
+  
+  // LCD
+  lcd.init();			// initializes LCD display
+  lcd.clear();			// clears screen
+  lcd.backlight();      // Make sure backlight is on
+  
+  // Print a message on both lines of the LCD
+  lcd.setCursor(1,0);   //Set cursor to character 1 on line 0
+  lcd.print("It is Time for");
+  
+  lcd.setCursor(1,1);   //Move cursor to character 1 on line 1
+  lcd.print("True or False!");
+  delay(3000);
+  
+  lcd.clear();
+  lcd.setCursor(1,0);   //Set cursor to character 1 on line 0
+  lcd.print("Press the last");
+  
+  lcd.setCursor(0,1);   //Set cursor to character 1 on line 0
+  lcd.print("Button to Start!");
+}
+
+void loop()
+{
+  while (counter<6)
+  {
+    value1 = digitalRead(button1);
+    value2 = digitalRead(button2);
+    value3 = digitalRead(button3);
+    if(value3==HIGH) // starts the game
+    {
+      counter++; // increases counter, changes question
+      delay(500); // delays for half a second to avoid the if statement
+      // looping multiple times a second
+      lcd.clear();
+    }
+    if(counter==1) // first question
+    {
+      lcd.setCursor(1,0);
+      lcd.print("Humans use the");
+      lcd.setCursor(0,1);
+      lcd.print("Decimal # System");
+      while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed
+      {
+        value1 = digitalRead(button1);
+    	value2 = digitalRead(button2);
+        delay(1);
+        if(value1==1) // if player choose true
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(4,1); // sets position on display
+          lcd.print("Correct!");
+          correct++;
+        }
+        else if(value2==1) // if player chooses false
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(5,1); // sets position on display
+          lcd.print("Wrong!");
+          wrong++;
+        }
+      }
+    }
+    else if(counter==2) // second question
+    {
+      delay(1000); // delays before next question
+      lcd.clear();
+      lcd.setCursor(1,0);
+      lcd.print("WWW stands for");
+      lcd.setCursor(1,1);
+      lcd.print("World Wide Web");
+      while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed
+      {
+        value1 = digitalRead(button1);
+    	value2 = digitalRead(button2);
+        delay(1);
+        if(value1==1) // if player chooses true
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(4,1); // sets position on display
+          lcd.print("Correct!");
+          correct++;
+        }
+        else if(value2==1) // if player chooses false
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(5,1); // sets position on display
+          lcd.print("Wrong!");
+          wrong++;
+        }
+      }
+    }
+    else if(counter==3) // third question
+    {
+      delay(1000); // delays before next question
+      lcd.clear();
+      lcd.setCursor(1,0);
+      lcd.print("Computers read");
+      lcd.setCursor(2,1);
+      lcd.print("Hexadecimal.");
+      while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed
+      {
+        value1 = digitalRead(button1);
+    	value2 = digitalRead(button2);
+        delay(1);
+        if(value1==1) // if player chooses true
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(5,1); // sets position on display
+          lcd.print("Wrong!");
+          wrong++;
+        }
+        else if(value2==1) // if player chooses false
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(4,1); // sets position on display
+          lcd.print("Correct!");
+          correct++;
+        }
+      }
+    } // end of question 3
+    else if(counter==4) // fourth question
+    {
+      delay(1000); // delays before next question
+      lcd.clear();
+      lcd.setCursor(1,0);
+      lcd.print("IP Stands for");
+      lcd.setCursor(0,1);
+      lcd.print("InternetProtocol");
+      while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed
+      {
+        value1 = digitalRead(button1);
+    	value2 = digitalRead(button2);
+        delay(1);
+        if(value1==1) // if player chooses true
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(4,1); // sets position on display
+          lcd.print("Correct!");
+          correct++;
+        }
+        else if(value2==1) // if player chooses false
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(5,1); // sets position on display
+          lcd.print("Wrong!");
+          wrong++;
+        }
+      }
+    }// end of question 4
+    else if(counter==5) // fifth question
+    {
+      delay(1000); // delays before next question
+      lcd.clear();
+      lcd.setCursor(2,0);
+      lcd.print("HTML is used");
+      lcd.setCursor(2,1);
+      lcd.print("for  styling");
+      while (value1 == 0 && value2 == 0) // Checks to see if one of the buttons has been pressed
+      {
+        value1 = digitalRead(button1);
+    	value2 = digitalRead(button2);
+        delay(1);
+        if(value1==1) // if player chooses true
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(5,1); // sets position on display
+          lcd.print("Wrong!");
+          wrong++;
+        }
+        else if(value2==1) // if player chooses false
+        {
+          counter++; // brings to the next question
+          lcd.clear();
+          lcd.setCursor(3,0); // sets position on display
+          lcd.print("You got it");
+          lcd.setCursor(4,1); // sets position on display
+          lcd.print("Correct!");
+          correct++;
+        }
+      }
+      delay(2000);
+    }// end of question 5
+  }
+  lcd.clear();
+  lcd.setCursor(6,0);
+  lcd.print("Test");
+  lcd.setCursor(3,1);
+  lcd.print("Complete!!");
+  delay(2000);
+  if (correct>wrong)
+  {
+    lcd.clear();
+    lcd.setCursor(4,0);
+    lcd.print("You  Had");
+    delay(1000);
+    lcd.clear();
+    lcd.setCursor(3,0);
+    lcd.print("More Right");
+    lcd.setCursor(3,1);
+    lcd.print("Than Wrong");
+    delay(2000);
+  }
+  else if (wrong>correct)
+  {
+    lcd.clear();
+    lcd.setCursor(4,0);
+    lcd.print("You  Had");
+    delay(1000);
+    lcd.clear();
+    lcd.setCursor(3,0);
+    lcd.print("More Wrong");
+    lcd.setCursor(3,1);
+    lcd.print("Than Right");
+    delay(2000);
+  }
+  lcd.clear();
+  lcd.setCursor(4,0);
+  lcd.print("You  Got");
+  lcd.setCursor(3,1);
+  lcd.print(String(correct)+" Correct!"); // displays amt correct
+  delay(2000);
+  lcd.clear();
+  lcd.setCursor(4,0);
+  lcd.print("You  Got");
+  lcd.setCursor(4,1);
+  lcd.print(String(wrong)+" Wrong!"); // display amt wrong
+  delay(2000);
+  
+  lcd.clear();
+  lcd.setCursor(4,0);
+  lcd.print("GOODBYE!");
+  
+  exit(0); // exits program
+}

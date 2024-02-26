@@ -1,0 +1,110 @@
+<!--
+  Terence Nguyen
+  01/13/2023
+  Circuit Schematic
+  Picture of the circuit schematic and prices list 
+-->
+<html>
+  <head>
+    <title>
+      Summative | Circuit Schematic
+    </title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <!-- Side Navigation Bar -->
+    <ul id="sideul">
+      <li id="sideli"><a href="../index.html">Home</a></li>
+      <li id="sideli"><a href="index.html">Circuit Schematic</a></li>
+      <li id="sideli"><a href="../tinkercadVisual/index.html">Tinkercad Visual</a></li>
+      <li id="sideli"><a href="../demos/virtual.html">Virtual Demo</a></li>
+      <li id="sideli"><a href="../demos/live.html">Live Demo</a></li>
+      <li id="sideli"><a href="../code.html">Code</a></li>
+    </ul>
+    <div class="header">
+      <h1>Circuit Schematic & Parts List</h1>
+    </div>
+    <div id="firstGroup1">
+      <h2>Circuit Schematic</h2>
+      <img src="../IMAGES/circuitSchematic.png" id="imgCS">
+      <br><br><br>
+      <p>
+        In this circuit, I have used 3 push buttons which are connected to power(5V) and ground with a 10k Ohm pull down resistor and is also connected to the arduino via a signal pin. The pull down resistors are responsible for preventing a short circuit whenever the button is not pressed, this allows the arduino to read a low signal without a short circuit. The button on the left is connected to pin 2. The button in the middle is connected to pin 3. The button on the right is connected to pin 4. The LCD 16x2 is connected with 4 wires, GND, VCC, SDA and SCL. The GND pin is connected to the ground on the breadboard, the VCC pin is connected to power(5V) on the breadboard and both the SDA, data pin, and SCL, clock pin, are connected directly to the arduinos SDA and SCL pins.
+      </p>
+    </div>
+    <div id="secondGroup1">
+      <h2>Parts & Price List</h2>
+      <p style="color:red;">
+        Note * The arduino used in the live demo is the arduino mega, but the one in tinkercad is the arduino uno *<br>
+      </p>
+      <div id="table">
+        <table>
+          <tr>
+            <th>Part Name</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Taxes</th>
+            <th>Final Total</th>
+            <th>Links</th>
+          </tr>
+          <tr>
+            <td>Arduino Uno</td>
+            <td>1</td>
+            <td>$38.09</td>
+            <td>$4.95</td>
+            <td>$43.04</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Arduino/A000066?qs=BC3YYPaifMrIue9b%252BHtKQg%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>Push Buttons</td>
+            <td>3</td>
+            <td>$10.32</td>
+            <td>$1.34</td>
+            <td>$11.66</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Gravitech/BUTT-4?qs=Vxac6xGyzPm51iLpy8GNew%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>LCD I2C</td>
+            <td>1</td>
+            <td>$19.25</td>
+            <td>$2.50</td>
+            <td>$21.75</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Gravitech/LCD-16x2B?qs=Vxac6xGyzPnG7zGPUxgKdg%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>10k Ohm Resistor</td>
+            <td>3</td>
+            <td>$0.41</td>
+            <td>$0.05</td>
+            <td>$0.46</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/YAGEO/MFR-12FTF52-10K?qs=oAGoVhmvjhzLlUYKKBtdYQ%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>Breadboard</td>
+            <td>1</td>
+            <td>$10.34</td>
+            <td>$1.34</td>
+            <td>$11.68</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Mikroe/MIKROE-1097?qs=yR1Mpqbr%2FWJvGBmYu%252BI%2F7A%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>Male to Male Wires (10)</td>
+            <td>2</td>
+            <td>$8.28</td>
+            <td>$1.08</td>
+            <td>$9.36</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Mikroe/MIKROE-513?qs=7CTBMF0jTsHujVymHwDfAg%3D%3D">mouser.ca</a></td>
+          </tr>
+          <tr>
+            <td>Male to Female Wires (10)</td>
+            <td>1</td>
+            <td>$4.14</td>
+            <td>$0.54</td>
+            <td>$4.68</td>
+            <td><a href="https://www.mouser.ca/ProductDetail/Mikroe/MIKROE-512?qs=7CTBMF0jTsEZofUYpqZBLw%3D%3D">mouser.ca</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
